@@ -16,20 +16,17 @@ class GameController extends Controller
     public function index(Request $request)
     {
         //access data fom the request
-        //search database using request data
-        //return games that match
-
         $difficulty = $request->input('difficulty');
         $players = $request->input('players');
         $time = $request->input('time');
-        dd($time);
-        // return Game::where('difficulty', '=', $difficulty)->where('min_players', '>=', $players)->get();
-        //     // ->where('max_players', '<=', $players)
-        //     // ->where('time', '<=', $time)
-
+        
+        //search database using request data
+        //return games that match
         return Game::where([
             ['difficulty', '=', $difficulty],
-            ['min_players', '>=', $players]
+            ['min_players', '<=', $players],
+            ['max_players', '>=', $players],
+            ['time', '<=', $time]
         ])->get();
             
     }
