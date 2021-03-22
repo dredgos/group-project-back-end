@@ -22,6 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(["prefix" => "/games"], function() {
-    Route::get("", [GameController::class, "index"]);
+    Route::get("", [GameController::class, "gameRecs"]);
+    Route::get("/all", [GameController::class, "index"]);
     Route::get('/{game}', [GameController::class, "show"]);
+    
 });

@@ -15,7 +15,12 @@ class GameController extends Controller
      */
     public function index(Request $request)
     {
-        //access data fom the request
+        return Game::all();       
+    }
+
+    public function gameRecs(Request $request)
+    {
+         //access data fom the request
         $difficulty = $request->input('difficulty');
         $players = $request->input('players');
         $time = $request->input('time');
@@ -28,7 +33,6 @@ class GameController extends Controller
             ['max_players', '>=', $players],
             ['time', '<=', $time]
         ])->get();
-            
     }
 
     /**
