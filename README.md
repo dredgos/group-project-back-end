@@ -1,6 +1,6 @@
 ## API End Points
 
-GET /games
+`GET` /games
 - Request body format:
 - {
     "difficulty" : integer,
