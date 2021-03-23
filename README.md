@@ -17,7 +17,9 @@
             "min_players" : integer,
             "max_players" : integer,
             "difficulty" : integer,
-            "time" : integer
+            "time" : integer,
+            "description" : string,
+            "img_url" :  string
         }
     ]
 }
@@ -30,7 +32,9 @@
     "min_players" : integer,
     "max_players" : integer,
     "difficulty" : integer,
-    "time" : integer
+    "time" : integer,
+    "description" : string,
+    "img_url" :  string
 }
 
 ## `GET` /games/{game_id}/reviews
