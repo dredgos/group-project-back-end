@@ -22,9 +22,9 @@ class GameController extends Controller
     public function gameRecs(Request $request)
     {
          //access data fom the request
-        $difficulty = $request->input('difficulty');
-        $players = $request->input('players');
-        $time = $request->input('time');
+        $difficulty = $request->input('difficulty', 1);
+        $players = $request->input('players', 2);
+        $time = $request->input('time', 300);
         
         //search database using request data
         //return games that match
