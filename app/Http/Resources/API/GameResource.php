@@ -22,6 +22,7 @@ class GameResource extends JsonResource
             "difficulty" => $this->difficulty,
             "time" => $this->time,
             "description" => $this->description,
+            "genres" => $this->genres->pluck("genre"),
             "img_url" => $this->img_url
         ];
     }
