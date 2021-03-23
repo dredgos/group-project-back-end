@@ -19,7 +19,7 @@ class GameController extends Controller
         return Game::all();       
     }
 
-    public function gameRecs(Request $request)
+    public function recommendations(Request $request)
     {
          //access data fom the request
         $difficulty = $request->input('difficulty', 1);

@@ -23,7 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(["prefix" => "/games"], function() {
-    Route::get("/recommendations", [GameController::class, "gameRecs"]);
+    Route::get("/recommendations", [GameController::class, "recommendations"]);
     Route::get("", [GameController::class, "index"]);
     Route::get('/{game}', [GameController::class, "show"]);
     Route::post('/{game}/reviews', [ReviewController::class, "store"]);
