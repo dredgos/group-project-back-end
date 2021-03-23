@@ -19,7 +19,8 @@
             "difficulty" : integer,
             "time" : integer,
             "description" : string,
-            "img_url" :  string
+            "img_url" :  string,
+            "genre" : array of strings
         }
     ]
 }
