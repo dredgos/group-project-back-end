@@ -6,6 +6,7 @@ use App\Http\Resources\API\GameResource;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Game;
+use App\Http\Resources\API\GameResource;
 
 class GameController extends Controller
 {
@@ -70,16 +71,16 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ArticleRequest $request, Article $article)
+    public function update(GameRequest $request, Game $game)
     {
         // update the article first
         $data = $request->all();
-        $article->fill($data)->save();
+        $game->fill($data)->save();
 
         // use the new method - can't chain as save returns a bool
-        $article->setTags($request->get("tags"));
+        $article->setGenres($request->get("genres"));
 
-        return new ArticleResource($article);
+        return new GameResource($game);
     }
 
     /**
