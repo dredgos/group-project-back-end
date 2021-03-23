@@ -35,7 +35,7 @@
 
 ## `GET` /games/{game_id}/reviews
 
--Response:
+- Response:
 {
     "data": [
         {
@@ -48,7 +48,7 @@
 }
 
 ## `POST` /games/{game_id}/reviews
--Request body format:
+- Request body format:
 {
     "name": string,
     "review": string,
