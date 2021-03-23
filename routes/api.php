@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\GameController;
+use App\Http\Controllers\API\ReviewController;
 
 
 /*
@@ -25,5 +26,6 @@ Route::group(["prefix" => "/games"], function() {
     Route::get("", [GameController::class, "gameRecs"]);
     Route::get("/all", [GameController::class, "index"]);
     Route::get('/{game}', [GameController::class, "show"]);
-    
+    Route::post('/{game}/reviews', [ReviewController::class, "store"]);
+    Route::get('/{game}/reviews', [ReviewController::class, "index"]);
 });

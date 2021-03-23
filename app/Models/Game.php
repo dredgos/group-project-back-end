@@ -11,4 +11,9 @@ class Game extends Model
 
     protected $fillable = ["title", "min_players", "max_players", "difficulty", "time"];
     public $timestamps = false;
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
