@@ -7,15 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genre extends Model
 {
+
+    public $timestamps = false;
+    protected $fillable = ["genre"];
+
     public function games()
     {
         return $this->belongsToMany(Game::class);
     }
 
-    public static function fromStrings(array $strings) : Collection
+    public static function fromStrings(array $strings) 
     {
         return collect($strings)->map(fn($str) => trim($str))
                                 ->unique()
-                                ->map(fn($str) => Tag::firstOrCreate(["name" => $str]));
+                                ->map(fn($str) => Genre::firstOrCreate(["genre" => $str]));
     }
 }
