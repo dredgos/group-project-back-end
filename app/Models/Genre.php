@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genre extends Model
 {
+    public $timestamps = false;
+    
     public function games()
     {
         return $this->belongsToMany(Game::class);
@@ -16,6 +18,6 @@ class Genre extends Model
     {
         return collect($strings)->map(fn($str) => trim($str))
                                 ->unique()
-                                ->map(fn($str) => Tag::firstOrCreate(["name" => $str]));
+                                ->map(fn($str) => Game::firstOrCreate(["name" => $str]));
     }
 }
