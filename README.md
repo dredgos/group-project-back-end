@@ -1,6 +1,6 @@
-## API End Points
+# API End Points
 
-# `GET` /games
+## `GET` /games
 - Request body format:
 {
     "difficulty" : integer,
@@ -22,7 +22,7 @@
     ]
 }
 
-# `GET` /games/{game_id}
+## `GET` /games/{game_id}
 - Response: 
 {
     "id" : integer,
@@ -33,7 +33,7 @@
     "time" : integer
 }
 
-# `GET` /games/{game_id}/reviews
+## `GET` /games/{game_id}/reviews
 
 -Response:
 {
@@ -47,7 +47,7 @@
     ]
 }
 
-# `POST` /games/{game_id}/reviews
+## `POST` /games/{game_id}/reviews
 -Request body format:
 {
     "name": string,
