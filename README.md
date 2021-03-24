@@ -1,15 +1,16 @@
 # API End Points
 
-## `GET` /games
-- Request body format:
-{
+## `GET` /recommendations
+Returns games based on filter criteria
+Request body format:
+`{
     "difficulty" : integer,
     "time" : integer,
     "players" : integer
-}
+}`
 
-- Response:
-{
+Response:
+`{
     data: [
         {
             "id" : integer,
@@ -23,11 +24,32 @@
             "genre" : array of strings
         }
     ]
-}
+}`
+
+## `GET` /games
+Gets all games in database
+Response:
+`{
+    data: [
+        {
+            "id" : integer,
+            "title" : string,
+            "min_players" : integer,
+            "max_players" : integer,
+            "difficulty" : integer,
+            "time" : integer,
+            "description" : string,
+            "img_url" :  string,
+            "genre" : array of strings
+        }
+    ]`
+}`
+
 
 ## `GET` /games/{game_id}
-- Response: 
-{
+Returns individual game
+Response: 
+`{
     "id" : integer,
     "title" : string,
     "min_players" : integer,
@@ -36,12 +58,12 @@
     "time" : integer,
     "description" : string,
     "img_url" :  string
-}
+}`
 
 ## `GET` /games/{game_id}/reviews
-
-- Response:
-{
+Returns reviews for individual game
+Response:
+`{
     "data": [
         {
             "id": integer,
@@ -50,12 +72,13 @@
             "rating": integer
         }
     ]
-}
+}`
 
 ## `POST` /games/{game_id}/reviews
-- Request body format:
-{
+Post review for game
+Request body format:
+`{
     "name": string,
     "review": string,
     "rating": integer
-}
+}`
