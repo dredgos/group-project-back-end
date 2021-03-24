@@ -16,7 +16,7 @@ class GameController extends Controller
      */
     public function index(Request $request)
     {
-        return Game::all();       
+        return GameResource::collection(Game::all());       
     }
 
     public function recommendations(Request $request)

@@ -1,6 +1,9 @@
 # API End Points
 
-## `GET` /games
+## 'GET' /games
+returns all the games in database
+
+## `GET` /recommendations
 - Request body format:
 {
     "difficulty" : integer,
