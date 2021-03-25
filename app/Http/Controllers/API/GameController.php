@@ -28,12 +28,12 @@ class GameController extends Controller
         
         //search database using request data
         //return games that match
-        return Game::where([
+        return GameResource::collection(Game::where([
             ['difficulty', '=', $difficulty],
             ['min_players', '<=', $players],
             ['max_players', '>=', $players],
             ['time', '<=', $time]
-        ])->get();
+        ])->get());
     }
 
     /**
