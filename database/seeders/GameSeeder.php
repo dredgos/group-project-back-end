@@ -38,6 +38,11 @@ class GameSeeder extends Seeder
                 $gameInDB->setGenres([$game[5]]);
             }
 
+            if($game[5] !== "" && $game[4] !== "")
+            {
+                $gameInDB->setGenres([$game[4], $game[5]]);
+            }
+
         }
         
     }

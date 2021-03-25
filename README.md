@@ -1,18 +1,9 @@
 # API End Points
 
-<<<<<<< HEAD
-## 'GET' /games
-returns all the games in database
-
-## `GET` /recommendations
-- Request body format:
-{
-=======
 ## `GET` /recommendations
 Returns games based on filter criteria
 Request body format:
 `{
->>>>>>> e10fb2364d4646a66474ab117b3e6cf09cfd4bbc
     "difficulty" : integer,
     "time" : integer,
     "players" : integer
